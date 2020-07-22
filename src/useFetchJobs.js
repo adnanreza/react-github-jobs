@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import { useReducer, useEffect } from 'react';
 
 const ACTIONS = {
   MAKE_REQUEST: 'make-request',
@@ -26,6 +26,10 @@ function reducer(state, action) {
 
 export default function useFetchJobs(params, page) {
   const [state, dispatch] = useReducer(reducer, { jobs: [], loading: true });
+
+  useEffect(() => {
+    dispatch({ type: ACTIONS.MAKE_REQUEST });
+  }, [params, page]);
 
   return {
     jobs: [],
