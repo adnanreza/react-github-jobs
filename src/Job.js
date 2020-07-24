@@ -41,7 +41,7 @@ export default function Job({ job }) {
             onClick={() => setOpen((prevOpen) => !prevOpen)}
             variant='primary'
           >
-            View Details
+            {open ? 'Hide Details' : 'View Details'}
           </Button>
         </Card.Text>
         <Collapse in={open}>
