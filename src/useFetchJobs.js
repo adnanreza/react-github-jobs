@@ -1,6 +1,7 @@
 import { useReducer, useEffect } from 'react';
 import axios from 'axios';
 
+// Actions
 const ACTIONS = {
   MAKE_REQUEST: 'make-request',
   GET_DATA: 'get-data',
@@ -11,6 +12,7 @@ const ACTIONS = {
 const BASE_URL =
   'https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json';
 
+// Reducers
 function reducer(state, action) {
   switch (action.type) {
     case ACTIONS.MAKE_REQUEST:
