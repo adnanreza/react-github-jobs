@@ -10,6 +10,7 @@ function App() {
 
   return (
     <Container className='my-4'>
+      <h1 className='mb-4'>Jobs from GitHub</h1>
       {loading && <h1>Loading...</h1>}
       {error && <h1>Error, try refreshing</h1>}
       <h1>
