@@ -34,6 +34,7 @@ export default function Job({ job }) {
             className='d-none d-md-block'
             alt={job.company}
             src={job.company_logo}
+            height='50'
           />
         </div>
         <Card.Text>
