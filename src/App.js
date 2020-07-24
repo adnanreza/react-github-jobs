@@ -9,7 +9,7 @@ function App() {
   const { jobs, loading, error } = useFetchJobs();
 
   return (
-    <Container>
+    <Container className='my-4'>
       {loading && <h1>Loading...</h1>}
       {error && <h1>Error, try refreshing</h1>}
       <h1>
