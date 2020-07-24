@@ -1,9 +1,9 @@
-import React from 'react';
-import { Card, Badge } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Card, Badge, Button, Collapse } from 'react-bootstrap';
 import ReactMarkDown from 'react-markdown';
 
 export default function Job({ job }) {
-  console.log(job);
+  const [open, setOpen] = useState(false);
   return (
     <Card>
       <Card.Body>
@@ -36,6 +36,19 @@ export default function Job({ job }) {
             src={job.company_logo}
           />
         </div>
+        <Card.Text>
+          <Button
+            onClick={() => setOpen((prevOpen) => !prevOpen)}
+            variant='primary'
+          >
+            View Details
+          </Button>
+        </Card.Text>
+        <Collapse in={open}>
+          <div className='mt-4'>
+            <ReactMarkDown source={job.description} />
+          </div>
+        </Collapse>
       </Card.Body>
     </Card>
   );
