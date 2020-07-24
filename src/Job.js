@@ -1,11 +1,14 @@
 import React from 'react';
 import { Card, Badge } from 'react-bootstrap';
+import ReactMarkDown from 'react-markdown';
 
 export default function Job({ job }) {
+  console.log(job);
   return (
     <Card>
       <Card.Body>
         <div className='d-flex justify-content-between'>
+          {/**LeftSide */}
           <div>
             <Card.Title>
               {job.title} -{' '}
@@ -22,7 +25,16 @@ export default function Job({ job }) {
             <Badge variant='secondary' className='mr-2'>
               {job.location}
             </Badge>
+            <div style={{ wordBreak: 'break-all' }}>
+              <ReactMarkDown source={job.how_to_apply} />
+            </div>
           </div>
+          {/**RightSide */}
+          <img
+            className='d-none d-md-block'
+            alt={job.company}
+            src={job.company_logo}
+          />
         </div>
       </Card.Body>
     </Card>
